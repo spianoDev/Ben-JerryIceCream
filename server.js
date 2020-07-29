@@ -15,9 +15,13 @@ let icecreams = [
     {name: 'jawbreakers', price: 6, awesomeness: 2},
     { name: "pistachio", price: 11, awesomeness: 15 }
 ];
-
+app.get('/', (req, res) => {
+res.render('index');
+});
 app.get(`/icecream/:name`, (req, res) => {
-
+    const targetFlavor = req.params.name;
+const foundIceCream = icecreams.find(flavor => flavor.name === targetFlavor);
+res.render('singleFlavor', foundIceCream);
 });
 
 app.get(`/icecreams`, (req, res) => {

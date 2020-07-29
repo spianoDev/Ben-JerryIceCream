@@ -25,7 +25,7 @@ res.render('singleFlavor', foundIceCream);
 });
 
 app.get(`/icecreams`, (req, res) => {
-
+res.render('flavors', { icecreams });
 });
 
 app.listen(port, () => console.log(`listening on http://localhost:${port}`));

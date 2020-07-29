@@ -4,7 +4,9 @@ const exphbs = require('express-handlebars');
 const app = express();
 const port = 8008;
 
-app.engine('handlebars', exphbs());
+app.engine('handlebars', exphbs({
+    helpers: require('./helpers.js')
+}));
 app.set('view engine', 'handlebars');
 
 let icecreams = [
@@ -16,7 +18,7 @@ let icecreams = [
     { name: "pistachio", price: 11, awesomeness: 15 }
 ];
 app.get('/', (req, res) => {
-res.render('index');
+res.render('index', { icecreams });
 });
 app.get(`/icecream/:name`, (req, res) => {
     const targetFlavor = req.params.name;

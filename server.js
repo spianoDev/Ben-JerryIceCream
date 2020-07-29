@@ -20,7 +20,7 @@ let icecreams = [
 app.get('/', (req, res) => {
 res.render('index', { icecreams });
 });
-app.get(`/icecream/:name`, (req, res) => {
+app.get(`/icecreams/:name`, (req, res) => {
     const targetFlavor = req.params.name;
 const foundIceCream = icecreams.find(flavor => flavor.name === targetFlavor);
 res.render('singleFlavor', foundIceCream);

@@ -1,10 +1,26 @@
-{{#if name}}
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h1>
+                {{#if name}}
+                    {{name}}
+                {{else}}
+                    So sorry, but that flavor isn't available today!
 
-<h1>{{name}}</h1>
-<ul>
-    <li><strong>Price:</strong> ${{price}}</li>
-    <li><strong>Awesomeness:</strong> {{awesomeness}}</li>
-</ul>
-{{else}}
-    <h1>So sorry, but that flavor isn't available today!</h1>
-{{/if}}
+                {{/if}}
+            </h1>
+        </div>
+
+        {{#if name}}
+            <div class="card-body">
+
+                <ul class="card-text">
+                    <li><strong>Price:</strong> ${{price}}</li>
+                    <li><strong>Awesomeness:</strong> {{awesomeness}}</li>
+                </ul>
+            </div>
+
+        {{/if}}
+
+    </div>
+</div>
